@@ -1,5 +1,5 @@
 const BASE = (import.meta.env.VITE_API_BASE as string | undefined) ?? '/api'
-const TOKEN_KEY = 'sampurna.token'
+const TOKEN_KEY = 'swasti.token'
 
 export function getToken(): string | null {
   try { return sessionStorage.getItem(TOKEN_KEY) } catch { return null }

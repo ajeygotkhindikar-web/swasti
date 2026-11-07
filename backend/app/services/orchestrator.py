@@ -31,7 +31,7 @@ from ..models import (
 )
 from .agents import get_agent
 
-log = logging.getLogger("sampurna.orchestrator")
+log = logging.getLogger("swasti.orchestrator")
 
 # (cat_a, cat_b, observation, suggestion)
 RELATIONS = [

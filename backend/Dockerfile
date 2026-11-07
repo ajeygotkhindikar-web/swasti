@@ -4,8 +4,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-RUN useradd -m sampurna && chown -R sampurna /app
-USER sampurna
+RUN useradd -m swasti && chown -R swasti /app
+USER swasti
 EXPOSE 8000
 # Apply migrations + master data on start (idempotent), then serve.
 CMD ["sh", "-c", "alembic upgrade head && python -m app.seed.seed ${SEED_FLAGS} && uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2 --proxy-headers"]

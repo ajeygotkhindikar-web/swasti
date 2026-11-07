@@ -2,13 +2,13 @@
 services:
   db:
     image: postgres:16-alpine
-    environment: { POSTGRES_DB: sampurna, POSTGRES_USER: sampurna, POSTGRES_PASSWORD: ${DB_PASSWORD:-change-me} }
+    environment: { POSTGRES_DB: swasti, POSTGRES_USER: swasti, POSTGRES_PASSWORD: ${DB_PASSWORD:-change-me} }
     volumes: [pgdata:/var/lib/postgresql/data]
-    healthcheck: { test: ["CMD-SHELL", "pg_isready -U sampurna"], interval: 5s, retries: 10 }
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U swasti"], interval: 5s, retries: 10 }
   api:
     build: ./backend
     environment:
-      DATABASE_URL: postgresql+psycopg://sampurna:${DB_PASSWORD:-change-me}@db:5432/sampurna
+      DATABASE_URL: postgresql+psycopg://swasti:${DB_PASSWORD:-change-me}@db:5432/swasti
       JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET}
       TRANSCRIPT_ENCRYPTION_KEY: ${TRANSCRIPT_ENCRYPTION_KEY:?set TRANSCRIPT_ENCRYPTION_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}

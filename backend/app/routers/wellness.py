@@ -280,7 +280,7 @@ def report_pdf(user_id: uuid.UUID | None = Query(None), kind: str = Query("indiv
     audit(db, user.user_id, "report_generated", subject_id, kind)
     db.commit()
     pdf = build_pdf(db, subject, kind, viewer=user)
-    fname = f"sampurna-{kind}-report-{date.today().isoformat()}.pdf"
+    fname = f"swasti-{kind}-report-{date.today().isoformat()}.pdf"
     return Response(pdf, media_type="application/pdf", headers={"Content-Disposition": f'attachment; filename="{fname}"'})
 
 

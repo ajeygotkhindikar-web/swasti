@@ -47,11 +47,11 @@ async function individualJourney(browser) {
 async function privacyJourney(browser) {
   const ctx = await browser.newContext()
   const p = await ctx.newPage()
-  await p.goto(BASE + '/login'); await p.fill('#email', 'admin@sampurna.demo'); await p.fill('#pw', 'Demo@1234')
+  await p.goto(BASE + '/login'); await p.fill('#email', 'admin@swasti.demo'); await p.fill('#pw', 'Demo@1234')
   await p.click('button:has-text("Sign in")'); await p.waitForURL(BASE + '/')
   await p.goto(BASE + '/dashboard') // admin is redirected away from individual dashboards
   await p.waitForURL(BASE + '/')
-  const res = await p.evaluate(async () => (await fetch('/api/dashboard', { headers: { Authorization: 'Bearer ' + sessionStorage.getItem('sampurna.token') } })).status)
+  const res = await p.evaluate(async () => (await fetch('/api/dashboard', { headers: { Authorization: 'Bearer ' + sessionStorage.getItem('swasti.token') } })).status)
   assert.equal(res, 403)
   await ctx.close()
   console.log('✓ admin cannot view individual wellness data')

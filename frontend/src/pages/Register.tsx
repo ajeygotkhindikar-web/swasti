@@ -33,7 +33,7 @@ export default function Register() {
         <fieldset className="space-y-3 rounded-2xl bg-surface2 p-4 text-sm">
           <legend className="sr-only">Consent</legend>
           <label className="flex gap-3"><input type="checkbox" className="mt-1 h-4 w-4 accent-[rgb(var(--teal))]" checked={f.consent_data_processing} onChange={set('consent_data_processing')} required />
-            <span><b>Required:</b> I consent to SAMPURNA processing my self-reported wellness information to calculate my scores and recommendations, as described in the privacy notice (DPDP Act, 2023). I can withdraw consent and delete my data at any time. My employer cannot see my individual results.</span></label>
+            <span><b>Required:</b> I consent to SWASTI processing my self-reported wellness information to calculate my scores and recommendations, as described in the privacy notice (DPDP Act, 2023). I can withdraw consent and delete my data at any time. My employer cannot see my individual results.</span></label>
           <label className="flex gap-3"><input type="checkbox" className="mt-1 h-4 w-4" checked={f.consent_ai_analysis} onChange={set('consent_ai_analysis')} />
             <span><b>Optional:</b> Allow an AI language model to rephrase my agent summaries. Only scores and dimension names are sent — never my name, contact details or comments.</span></label>
         </fieldset>

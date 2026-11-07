@@ -1,5 +1,5 @@
 /**
- * SAMPURNA emblem: a unity ring holding 14 interconnected nodes (the 14 wellness
+ * SWASTI emblem: a unity ring holding 14 interconnected nodes (the 14 wellness
  * dimensions), a stylised lotus (balance and growth) and a central diya-inspired
  * light (knowledge and inner awareness). Deliberately non-religious and minimal.
  */
@@ -13,7 +13,7 @@ export function Emblem({ size = 40, mono = false }: { size?: number; mono?: bool
   const saffron = mono ? 'currentColor' : '#E8892B'
   const petal = 'M50 70 C41 60 41 46 50 34 C59 46 59 60 50 70 Z'
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" role="img" aria-label="SAMPURNA emblem">
+    <svg width={size} height={size} viewBox="0 0 100 100" role="img" aria-label="SWASTI emblem">
       <circle cx="50" cy="50" r="47" fill="none" stroke={teal} strokeWidth="3" />
       <circle cx="50" cy="50" r="41" fill="none" stroke={teal} strokeWidth="0.8" strokeOpacity="0.5" />
       {nodes.map(([x, y], i) => (
@@ -38,7 +38,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
     <div className="flex items-center gap-2.5">
       <Emblem size={compact ? 32 : 40} />
       <div className="leading-tight">
-        <div className="font-display text-lg font-semibold tracking-[0.18em] text-teal">SAMPURNA</div>
+        <div className="font-display text-lg font-semibold tracking-[0.18em] text-teal">SWASTI</div>
         {!compact && <div className="text-[10px] text-muted tracking-wide">360° Human Wellness &amp; Life Balance</div>}
       </div>
     </div>

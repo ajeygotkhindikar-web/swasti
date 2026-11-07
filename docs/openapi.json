@@ -1,7 +1,7 @@
 {
  "openapi": "3.1.0",
  "info": {
-  "title": "SAMPURNA API",
+  "title": "SWASTI API",
   "description": "360\u00b0 Human Wellness & Life Balance \u2014 *Balance Within. Harmony Around. Well-being for All.*\n\nREST API shared by the web PWA and future native mobile apps. Wellness scores are self-assessment indicators, not medical diagnoses or professional financial assessments.",
   "version": "1.0.0"
  },

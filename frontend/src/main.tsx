@@ -6,7 +6,7 @@ import App from './App'
 import { AuthProvider } from './lib/auth'
 
 try {
-  const t = localStorage.getItem('sampurna.theme')
+  const t = localStorage.getItem('swasti.theme')
   if (t && t !== 'system') document.documentElement.setAttribute('data-theme', t)
 } catch { /* storage unavailable */ }
 

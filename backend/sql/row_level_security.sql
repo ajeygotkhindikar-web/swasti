@@ -1,8 +1,8 @@
--- Optional defence-in-depth: PostgreSQL Row-Level Security for SAMPURNA.
+-- Optional defence-in-depth: PostgreSQL Row-Level Security for SWASTI.
 --
 -- The API enforces access rules in application code (services/access.py) and is
 -- covered by tests. These policies add a database-level backstop when the API
--- connects as a NON-superuser role (e.g. `sampurna_app`) and sets, per request:
+-- connects as a NON-superuser role (e.g. `swasti_app`) and sets, per request:
 --     SELECT set_config('app.user_id', '<uuid>', true);
 -- On Supabase, replace current_setting('app.user_id') with auth.uid().
 -- Not applied by default migrations; review and apply deliberately.

@@ -8,7 +8,7 @@ import { CategoryStep, toPayload, type AnswerState, type Category } from '../com
 import { CategoryIcon, Disclaimer, ErrorNote, LevelBadge, PageHeader, SafetyBanner, Spinner } from '../components/ui'
 import { fmt } from '../lib/levels'
 
-const DRAFT = 'sampurna.assessment.draft'
+const DRAFT = 'swasti.assessment.draft'
 
 export default function Assessment() {
   const { data: cats, loading, error } = useApi<Category[]>('/categories')

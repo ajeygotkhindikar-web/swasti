@@ -1,6 +1,6 @@
 """Crisis-language detection and escalation guidance.
 
-SAMPURNA is not an emergency service. When free-text suggests serious
+SWASTI is not an emergency service. When free-text suggests serious
 distress or a safety risk, the person is shown human crisis resources
 immediately. Agents never attempt to counsel or respond as a first responder.
 """
@@ -16,7 +16,7 @@ _RX = re.compile("|".join(CRISIS_PATTERNS), re.IGNORECASE)
 CRISIS_GUIDANCE = {
     "message": (
         "It sounds like you may be going through something very difficult. You don't have to face "
-        "it alone. Please reach out to someone now. SAMPURNA is not an emergency service."
+        "it alone. Please reach out to someone now. SWASTI is not an emergency service."
     ),
     "resources": [
         {"name": "Emergency services (India)", "contact": "112"},

@@ -1,4 +1,4 @@
-"""SAMPURNA relational data model (PostgreSQL).
+"""SWASTI relational data model (PostgreSQL).
 
 All tables use UUID primary keys (except small master-data lookups that
 are referenced by stable codes), foreign keys with explicit ON DELETE rules,

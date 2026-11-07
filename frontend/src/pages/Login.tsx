@@ -4,15 +4,15 @@ import { Emblem } from '../components/Logo'
 import { useAuth } from '../lib/auth'
 
 const DEMO = [
-  ['Individual', 'priya@sampurna.demo'], ['Coach', 'coach@sampurna.demo'],
-  ['Counsellor', 'counselor@sampurna.demo'], ['Admin', 'admin@sampurna.demo'],
+  ['Individual', 'priya@swasti.demo'], ['Coach', 'coach@swasti.demo'],
+  ['Counsellor', 'counselor@swasti.demo'], ['Admin', 'admin@swasti.demo'],
 ]
 
 export function AuthShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
       <div className="relative hidden overflow-hidden bg-teal p-12 text-white lg:flex lg:flex-col lg:justify-between">
-        <div className="flex items-center gap-3"><div className="rounded-full bg-[#FBF8F1] p-1"><Emblem size={44} /></div><span className="font-display text-xl tracking-[0.2em]">SAMPURNA</span></div>
+        <div className="flex items-center gap-3"><div className="rounded-full bg-[#FBF8F1] p-1"><Emblem size={44} /></div><span className="font-display text-xl tracking-[0.2em]">SWASTI</span></div>
         <div>
           <h1 className="font-display text-5xl leading-tight">Balance Within.<br />Harmony Around.<br /><span className="text-[#F5B76B]">Well-being for All.</span></h1>
           <p className="mt-6 max-w-md text-white/80">A 360° view across fourteen dimensions of life — mind, body, money, family, community, culture and more — with small, evidence-informed steps to keep them in balance.</p>

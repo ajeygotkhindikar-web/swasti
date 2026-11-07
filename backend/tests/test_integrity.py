@@ -108,11 +108,11 @@ def test_alembic_migration_matches_models():
     from sqlalchemy import create_engine
     import os
 
-    url = os.environ["DATABASE_URL"].rsplit("/", 1)[0] + "/sampurna_migtest"
+    url = os.environ["DATABASE_URL"].rsplit("/", 1)[0] + "/swasti_migtest"
     admin = create_engine(os.environ["DATABASE_URL"].rsplit("/", 1)[0] + "/postgres", isolation_level="AUTOCOMMIT")
     with admin.connect() as c:
-        c.execute(text("drop database if exists sampurna_migtest"))
-        c.execute(text("create database sampurna_migtest"))
+        c.execute(text("drop database if exists swasti_migtest"))
+        c.execute(text("create database swasti_migtest"))
     os.environ["DATABASE_URL_MIG"] = url
     from app.config import get_settings
     cfg = Config(os.path.join(os.path.dirname(__file__), "..", "alembic.ini"))

@@ -33,7 +33,7 @@ export default function Privacy() {
   const revoke = async (id: string) => { await api(`/access-grants/${id}`, { method: 'DELETE' }); reloadGrants() }
   const exportData = async () => {
     const d = await api('/me/export'); const b = new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' })
-    const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'sampurna-my-data.json'; a.click()
+    const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'swasti-my-data.json'; a.click()
   }
   const del = async () => { if (!confirm('Permanently delete your account and wellness data? This cannot be undone.')) return; await api('/me', { method: 'DELETE' }); logout(); nav('/login') }
   const pro = pros?.find((p) => p.user_id === g.grantee_id)

@@ -1,4 +1,4 @@
-"""SAMPURNA – 360° Human Wellness & Life Balance Platform: API entry point."""
+"""SWASTI – 360° Human Wellness & Life Balance Platform: API entry point."""
 import logging
 
 from fastapi import FastAPI, Request
@@ -13,7 +13,7 @@ from .routers import assessments, auth, interviews, portal, privacy, wellness
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI(
-    title="SAMPURNA API",
+    title="SWASTI API",
     version="1.0.0",
     description=(
         "360° Human Wellness & Life Balance — *Balance Within. Harmony Around. Well-being for All.*\n\n"
@@ -54,4 +54,4 @@ for r in (auth.router, privacy.router, assessments.router, interviews.router, we
 def health():
     with engine.connect() as c:
         c.execute(text("select 1"))
-    return {"status": "ok", "service": "sampurna-api"}
+    return {"status": "ok", "service": "swasti-api"}

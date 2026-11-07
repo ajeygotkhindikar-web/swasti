@@ -1,4 +1,4 @@
-"""Master data for the 14 SAMPURNA wellness dimensions.
+"""Master data for the 14 SWASTI wellness dimensions.
 
 Every question uses the common 1–5 scale. Reverse-scored items (where a
 higher frequency is less healthy, e.g. stress) are flagged in scoring_rule.
@@ -164,7 +164,7 @@ REFERENCES = [
     ("REF_FIN_1", "FIN", "Financial Education resources", "Reserve Bank of India", "https://rbi.org.in/financialeducation/home.aspx", None, "Regulator guidance",
      "Consumer guidance on budgeting, saving, responsible borrowing and safe digital banking."),
     ("REF_FIN_2", "FIN", "Investor education portal", "Securities and Exchange Board of India", "https://investor.sebi.gov.in/", None, "Regulator guidance",
-     "Investor education on financial planning, risk and avoiding fraud. SAMPURNA does not recommend any investment product."),
+     "Investor education on financial planning, risk and avoiding fraud. SWASTI does not recommend any investment product."),
     ("REF_FIN_3", "FIN", "National Centre for Financial Education", "NCFE (promoted by RBI, SEBI, IRDAI, PFRDA)", "https://ncfe.org.in/", None, "National programme",
      "Free financial literacy material including household budgeting and emergency fund planning."),
     ("REF_PSY_1", "PSY", "Doing What Matters in Times of Stress: an illustrated guide", "World Health Organization", "https://www.who.int/publications/i/item/9789240003927", "2020", "International self-help guide",
@@ -230,7 +230,7 @@ RECOMMENDATIONS = [
     ("REC_FIN_1", "FIN", "Household budget", "A simple budget makes monthly expenses visible and manageable.", "List fixed and variable expenses for one month using an RBI/NCFE budgeting template.", "Review today's discretionary expenses", "daily", "REF_FIN_3", ["FIN_01"], 1),
     ("REC_FIN_2", "FIN", "Review loan obligations", "Knowing interest rates and EMIs helps you prioritise repayments.", "List each loan with its interest rate and EMI; consider prepaying the costliest first.", "Check one loan statement this week", "weekly", "REF_FIN_1", ["FIN_02"], 1),
     ("REC_FIN_3", "FIN", "Start an emergency fund", "An emergency buffer sized to your circumstances reduces financial stress.", "Set aside a small fixed amount each month into a separate savings account.", "Move a small amount to savings", "weekly", "REF_FIN_3", ["FIN_03"], 1),
-    ("REC_FIN_4", "FIN", "Improve financial literacy", "Understanding risk and fraud protects long-term goals. SAMPURNA does not recommend investment products.", "Read one module on SEBI's investor education portal.", "Learn one financial concept", "weekly", "REF_FIN_2", ["FIN_04"], 3),
+    ("REC_FIN_4", "FIN", "Improve financial literacy", "Understanding risk and fraud protects long-term goals. SWASTI does not recommend investment products.", "Read one module on SEBI's investor education portal.", "Learn one financial concept", "weekly", "REF_FIN_2", ["FIN_04"], 3),
     ("REC_PSY_1", "PSY", "Reflect on achievements", "Recognising progress supports confidence and resilience.", "Each week, note three things you handled well.", "Write down one thing you did well", "daily", "REF_PSY_1", ["PSY_01", "PSY_04"], 2),
     ("REC_PSY_2", "PSY", "Unhook from worrying thoughts", "Noticing and naming difficult thoughts reduces their pull.", "When career worries arise, name the thought and return attention to the present task.", "Name one worry and let it pass", "daily", "REF_PSY_1", ["PSY_02"], 1),
     ("REC_PSY_3", "PSY", "Talk to someone you trust", "Support from others helps people recover from setbacks. Professional help is available.", "Share a recent setback with a trusted person, or contact Tele-MANAS (14416).", "Reach out to one supportive person", "weekly", "REF_PSY_2", ["PSY_03"], 2),

@@ -124,16 +124,16 @@ def _answers(rng: random.Random, profile: dict[str, float], shift: dict[str, flo
 
 
 def seed_demo(db: Session) -> None:
-    if db.scalar(select(User).where(User.email == "priya@sampurna.demo")):
+    if db.scalar(select(User).where(User.email == "priya@swasti.demo")):
         print("Demo data already present.")
         return
     rng = random.Random(42)
-    _user(db, "admin@sampurna.demo", "Admin (synthetic)", "admin")
-    coach = _user(db, "coach@sampurna.demo", "Anil Mehta (synthetic coach)", "coach", occupation="Wellness coach")
-    counselor = _user(db, "counselor@sampurna.demo", "Dr. Kavya Rao (synthetic counsellor)", "counselor", occupation="Counselling psychologist")
-    priya = _user(db, "priya@sampurna.demo", "Priya Sharma (synthetic)", "individual", occupation="Software engineer",
+    _user(db, "admin@swasti.demo", "Admin (synthetic)", "admin")
+    coach = _user(db, "coach@swasti.demo", "Anil Mehta (synthetic coach)", "coach", occupation="Wellness coach")
+    counselor = _user(db, "counselor@swasti.demo", "Dr. Kavya Rao (synthetic counsellor)", "counselor", occupation="Counselling psychologist")
+    priya = _user(db, "priya@swasti.demo", "Priya Sharma (synthetic)", "individual", occupation="Software engineer",
                   industry="Information Technology", age_group="30-39", city="Pune")
-    ravi = _user(db, "ravi@sampurna.demo", "Ravi Kumar (synthetic)", "individual", occupation="Machine operator",
+    ravi = _user(db, "ravi@swasti.demo", "Ravi Kumar (synthetic)", "individual", occupation="Machine operator",
                  industry="Manufacturing", age_group="40-49", city="Coimbatore")
     db.add(AccessGrant(user_id=priya.user_id, grantee_id=coach.user_id, scopes=["assessments", "interviews", "reports"]))
     db.add(AccessGrant(user_id=priya.user_id, grantee_id=counselor.user_id, scopes=["assessments", "observations", "reports"]))
@@ -157,7 +157,7 @@ def seed_demo(db: Session) -> None:
     # A cohort of synthetic individuals for anonymised aggregate analytics
     industries = ["Information Technology", "Manufacturing", "Healthcare", "Education"]
     for n in range(12):
-        u = _user(db, f"member{n+1}@sampurna.demo", f"Member {n+1} (synthetic)", "individual",
+        u = _user(db, f"member{n+1}@swasti.demo", f"Member {n+1} (synthetic)", "individual",
                   industry=industries[n % 4], occupation="Professional", age_group=["20-29", "30-39", "40-49"][n % 3], city="Bengaluru")
         prof = {c[0]: rng.uniform(2.0, 4.3) for c in md.CATEGORIES}
         s, _ = submit_assessment(db, u.user_id, _answers(rng, prof, {}), assessment_date=q_dates[-1] - timedelta(days=n))
@@ -188,7 +188,7 @@ def seed_demo(db: Session) -> None:
                            summary_source="interviewer", consent_status="not_requested",
                            follow_up_plan="End-of-work routine; phone-free dinners", follow_up_date=(q_dates[1] + timedelta(days=45)).date()))
     db.commit()
-    print(f"Synthetic demo data created. Log in with any *@sampurna.demo account, password {DEMO_PASSWORD}")
+    print(f"Synthetic demo data created. Log in with any *@swasti.demo account, password {DEMO_PASSWORD}")
 
 
 def main() -> None:

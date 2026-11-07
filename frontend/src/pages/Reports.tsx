@@ -14,11 +14,11 @@ export default function Reports() {
   const [err, setErr] = useState<string | null>(null)
   const get = async (kind: string) => {
     setBusy(true); setErr(null)
-    try { await downloadPdf(`/reports/pdf?kind=${kind}${who ? `&user_id=${who}` : ''}`, `sampurna-${kind}-report.pdf`) } catch (e: any) { setErr(e.message) } finally { setBusy(false) }
+    try { await downloadPdf(`/reports/pdf?kind=${kind}${who ? `&user_id=${who}` : ''}`, `swasti-${kind}-report.pdf`) } catch (e: any) { setErr(e.message) } finally { setBusy(false) }
   }
   return (
     <div className="max-w-3xl">
-      <PageHeader title="Wellness Reports" subtitle="Downloadable PDF reports in the SAMPURNA format. Reports include only information the viewer is authorised to see." />
+      <PageHeader title="Wellness Reports" subtitle="Downloadable PDF reports in the SWASTI format. Reports include only information the viewer is authorised to see." />
       <ErrorNote msg={err} />
       {isPro && (
         <div className="card mb-4 p-4">

@@ -45,7 +45,7 @@ from ..models import (
 from . import scoring
 from .safety import CRISIS_GUIDANCE, detect_crisis
 
-log = logging.getLogger("sampurna.agents")
+log = logging.getLogger("swasti.agents")
 
 BOUNDARY = (
     "This is a self-assessment indicator, not a medical, psychological or financial diagnosis."
@@ -364,7 +364,7 @@ class PhysicalWellnessAgent(WellnessAgentBase):
 
 class FinancialWellnessAgent(WellnessAgentBase):
     category_id, agent_id, name = "FIN", "financial_agent", "Financial Wellness Agent"
-    guardrail = BOUNDARY + " SAMPURNA does not recommend investment or insurance products; consult a SEBI-registered adviser for personal advice."
+    guardrail = BOUNDARY + " SWASTI does not recommend investment or insurance products; consult a SEBI-registered adviser for personal advice."
 
     def specialised_notes(self, ctx):
         r = ctx["responses"].get("FIN_02")

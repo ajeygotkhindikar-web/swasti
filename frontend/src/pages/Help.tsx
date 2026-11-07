@@ -19,7 +19,7 @@ export default function Help() {
       <PageHeader title="Help & Resources" />
       <section className="card border-2 p-5" style={{ borderColor: 'var(--lv-attention)' }}>
         <h2 className="text-lg font-semibold">If you need support right now</h2>
-        <p className="mt-1 text-sm text-muted">SAMPURNA is not an emergency service and its agents cannot respond to emergencies. Please reach out to a person:</p>
+        <p className="mt-1 text-sm text-muted">SWASTI is not an emergency service and its agents cannot respond to emergencies. Please reach out to a person:</p>
         <ul className="mt-3 space-y-2 text-sm">
           <li className="flex items-center gap-2"><Phone size={15} /> Emergency services (India): <a className="font-bold text-teal" href="tel:112">112</a></li>
           <li className="flex items-center gap-2"><Phone size={15} /> Tele-MANAS — free 24×7 mental health support (MoHFW): <a className="font-bold text-teal" href="tel:14416">14416</a> or <a className="font-bold text-teal" href="tel:18008914416">1-800-891-4416</a></li>

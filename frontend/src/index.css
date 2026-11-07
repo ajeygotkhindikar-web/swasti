@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SAMPURNA brand tokens: deep teal, saffron, leaf green, soft ivory, muted blue */
+/* SWASTI brand tokens: deep teal, saffron, leaf green, soft ivory, muted blue */
 :root {
   --bg: 251 248 241;        /* soft ivory */
   --surface: 255 255 255;

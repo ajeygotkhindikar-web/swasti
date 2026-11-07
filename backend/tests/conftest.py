@@ -1,6 +1,6 @@
 import os
 
-os.environ.setdefault("DATABASE_URL", "postgresql+psycopg://postgres@localhost:5432/sampurna_test")
+os.environ.setdefault("DATABASE_URL", "postgresql+psycopg://postgres@localhost:5432/swasti_test")
 os.environ.pop("ANTHROPIC_API_KEY", None)
 
 import pytest  # noqa: E402

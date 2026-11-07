@@ -1,4 +1,4 @@
-# SAMPURNA — 360° Human Wellness & Life Balance
+# SWASTI — 360° Human Wellness & Life Balance
 
 *Balance Within. Harmony Around. Well-being for All.*
 
@@ -63,7 +63,7 @@ Specialisations include:
 Requires Python 3.11+, Node 20+, PostgreSQL 14+.
 
 ```bash
-createdb sampurna && createdb sampurna_test
+createdb swasti && createdb swasti_test
 ```
 
 ```bash
@@ -84,15 +84,15 @@ In a second terminal:
 cd frontend && npm install && npm run dev
 ```
 
-Open http://localhost:5173. API docs are at http://localhost:8000/docs. Set `DATABASE_URL` if PostgreSQL is not at `postgresql+psycopg://postgres@localhost:5432/sampurna`.
+Open http://localhost:5173. API docs are at http://localhost:8000/docs. Set `DATABASE_URL` if PostgreSQL is not at `postgresql+psycopg://postgres@localhost:5432/swasti`.
 
 **Synthetic demo accounts** (password `Demo@1234`):
 
-* `priya@sampurna.demo` — individual with 3 quarters of history, habits and a review
-* `coach@sampurna.demo` — coach with consent from Priya
-* `counselor@sampurna.demo` — counsellor with consent from Priya
-* `admin@sampurna.demo` — administrator
-* `ravi@sampurna.demo` — individual who has *not* granted consent (to demonstrate access denial)
+* `priya@swasti.demo` — individual with 3 quarters of history, habits and a review
+* `coach@swasti.demo` — coach with consent from Priya
+* `counselor@swasti.demo` — counsellor with consent from Priya
+* `admin@swasti.demo` — administrator
+* `ravi@swasti.demo` — individual who has *not* granted consent (to demonstrate access denial)
 
 ## Tests
 
@@ -100,7 +100,7 @@ Open http://localhost:5173. API docs are at http://localhost:8000/docs. Set `DAT
 cd backend && python -m pytest -q
 ```
 
-This runs scoring unit tests, API journey tests, consent and access tests, DB-integrity tests, agent retry tests, and a check that the migration matches the models. It needs the `sampurna_test` database.
+This runs scoring unit tests, API journey tests, consent and access tests, DB-integrity tests, agent retry tests, and a check that the migration matches the models. It needs the `swasti_test` database.
 
 For the browser journeys, start the API and `npm run build && npx vite preview`, then:
 
@@ -142,5 +142,4 @@ Home · My Profile · Wellness Assessment · Interview Assessment · 360° Welln
   * AI rephrasing needs `ANTHROPIC_API_KEY` and per-user consent. Only scores and dimension names are sent.
   * Voice-to-text uses the browser Speech Recognition API where available.
   * The service worker handles push events, but sending push messages needs a VAPID push service, which is not included.
-* **Name.** The brief ended with "Build SWASTI"; the app uses **SAMPURNA** as specified everywhere else. Changing the name is a branding-only change.
 * **UI components.** The UI uses Tailwind with a small in-house component set (`components/ui.tsx`) rather than shadcn/ui.

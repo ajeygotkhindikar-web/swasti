@@ -68,14 +68,14 @@ def build_pdf(db: Session, subject: User, kind: str = "individual", viewer: User
     data = build_dashboard(db, subject.user_id)
     buf = io.BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=A4, leftMargin=16 * mm, rightMargin=16 * mm, topMargin=14 * mm, bottomMargin=14 * mm,
-                            title="SAMPURNA Wellness Report", author="SAMPURNA")
+                            title="SWASTI Wellness Report", author="SWASTI")
     ss = getSampleStyleSheet()
     h1 = ParagraphStyle("h1", parent=ss["Title"], textColor=TEAL, fontSize=20, spaceAfter=2)
     h2 = ParagraphStyle("h2", parent=ss["Heading2"], textColor=TEAL, spaceBefore=10)
     body = ParagraphStyle("b", parent=ss["BodyText"], fontSize=9.5, leading=13)
     small = ParagraphStyle("s", parent=body, fontSize=8, textColor=colors.HexColor("#555555"))
     el = []
-    el.append(Paragraph("SAMPURNA", h1))
+    el.append(Paragraph("SWASTI", h1))
     el.append(Paragraph("360° Human Wellness &amp; Life Balance — <i>Balance Within. Harmony Around. Well-being for All.</i>", small))
     el.append(Spacer(1, 6))
     title = "Coach Wellness Report" if kind == "coach" else "Personal Wellness Report"
