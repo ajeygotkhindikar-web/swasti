@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SAMPURNA brand tokens: deep teal, saffron, leaf green, soft ivory, muted blue */
+:root {
+  --bg: 251 248 241;        /* soft ivory */
+  --surface: 255 255 255;
+  --surface2: 244 240 230;
+  --ink: 22 36 38;
+  --muted: 88 102 104;
+  --line: 226 220 205;
+  --teal: 15 94 99;
+  --on-teal: 255 255 255;
+  --teal-soft: 213 234 233;
+  --saffron: 196 106 20;
+  --saffron-soft: 252 233 210;
+  --leaf: 61 125 40;
+  --trust: 62 98 146;
+  /* chart series (validated categorical slots) */
+  --s-current: #2a78d6; --s-target: #eb6834; --s-previous: #1baf7a; --s-baseline: #6250d6;
+  --grid: #d9d4c7;
+  /* wellness levels: always paired with a text label */
+  --lv-attention: #b42318; --lv-developing: #a15c07; --lv-balanced: #2a63b8; --lv-good: #1f7a3a; --lv-thriving: #6b3fa0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: 12 22 24; --surface: 20 33 35; --surface2: 27 43 46; --ink: 232 238 236; --muted: 160 176 176; --line: 43 62 64;
+    --teal: 94 196 189; --on-teal: 12 22 24; --teal-soft: 22 58 60; --saffron: 240 160 80; --saffron-soft: 64 42 18; --leaf: 130 196 100; --trust: 132 168 220;
+    --s-current: #3987e5; --s-target: #d95926; --s-previous: #199e70; --s-baseline: #9085e9; --grid: #34494b;
+    --lv-attention: #f07167; --lv-developing: #f2b04c; --lv-balanced: #7fb0f0; --lv-good: #6fcf8b; --lv-thriving: #c39cf0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: 12 22 24; --surface: 20 33 35; --surface2: 27 43 46; --ink: 232 238 236; --muted: 160 176 176; --line: 43 62 64;
+  --teal: 94 196 189; --on-teal: 12 22 24; --teal-soft: 22 58 60; --saffron: 240 160 80; --saffron-soft: 64 42 18; --leaf: 130 196 100; --trust: 132 168 220;
+  --s-current: #3987e5; --s-target: #d95926; --s-previous: #199e70; --s-baseline: #9085e9; --grid: #34494b;
+  --lv-attention: #f07167; --lv-developing: #f2b04c; --lv-balanced: #7fb0f0; --lv-good: #6fcf8b; --lv-thriving: #c39cf0;
+  color-scheme: dark;
+}
+
+html, body, #root { min-height: 100%; }
+body { @apply bg-bg text-ink font-sans antialiased; -webkit-tap-highlight-color: transparent; }
+h1, h2, h3 { @apply font-display tracking-tight; }
+:focus-visible { outline: 2px solid rgb(var(--saffron)); outline-offset: 2px; border-radius: 6px; }
+
+@layer components {
+  .card { @apply bg-surface border border-line rounded-2xl shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 min-h-[44px] text-sm font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-teal text-onteal hover:brightness-110; }
+  .btn-ghost { @apply btn border border-line bg-surface hover:bg-surface2 text-ink; }
+  .btn-saffron { @apply btn bg-saffron text-white hover:brightness-110; }
+  .input { @apply w-full rounded-xl border border-line bg-surface px-3 min-h-[44px] text-sm text-ink placeholder:text-muted focus:border-teal focus:outline-none; }
+  .label { @apply block text-xs font-semibold text-muted mb-1 uppercase tracking-wide; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+}
