@@ -58,6 +58,28 @@ Specialisations include:
 * **Spiritual:** belief-neutral wording.
 * **Sporting:** no performance comparison.
 
+## Quick start with Docker (one command)
+
+With Docker Desktop running:
+
+```bash
+git clone https://github.com/ajeygotkhindikar-web/swasti.git && cd swasti
+```
+
+macOS / Linux:
+
+```bash
+./start.sh
+```
+
+Windows (PowerShell):
+
+```bash
+powershell -ExecutionPolicy Bypass -File .\start.ps1
+```
+
+On the first run, the script creates `.env` with fresh secrets and the synthetic demo data turned on. It then builds and starts the containers and opens http://localhost:8080. Log in with any demo account (password `Demo@1234`). To stop, run `docker compose down`; add `-v` to also wipe the data.
+
 ## Quick start (development)
 
 Requires Python 3.11+, Node 20+, PostgreSQL 14+.
