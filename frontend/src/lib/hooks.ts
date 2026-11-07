@@ -16,12 +16,12 @@ export function useApi<T>(path: string | null, deps: unknown[] = []) {
 }
 
 export function useTheme() {
-  const read = () => { try { return localStorage.getItem('swasti.theme') || 'system' } catch { return 'system' } }
+  const read = () => { try { return localStorage.getItem('swasti.theme.v2') === 'dark' ? 'dark' : 'light' } catch { return 'light' } }
   const [theme, setThemeState] = useState<string>(read)
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', theme)
-    try { localStorage.setItem('swasti.theme', theme) } catch { /* ignore */ }
+    root.setAttribute('data-theme', theme)
+    try { localStorage.setItem('swasti.theme.v2', theme) } catch { /* ignore */ }
   }, [theme])
   return [theme, setThemeState] as const
 }

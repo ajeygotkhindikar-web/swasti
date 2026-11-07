@@ -22,7 +22,7 @@ export default function Recommendations() {
       <PageHeader title="My Recommendations" subtitle="Personalised by your 14 agents, ordered by where you have the most room to grow. Every action links to a referenced source." />
       <div className="mb-5 flex gap-2" role="tablist">
         {([['mine', 'For me'], ['plan', `My plan (${plans?.filter((p) => p.completion_status === 'active').length ?? 0})`], ['kb', 'Knowledge base']] as const).map(([k, l]) => (
-          <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={clsx('btn min-h-[40px]', tab === k ? 'bg-teal text-onteal' : 'btn-ghost')}>{l}</button>
+          <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={clsx('btn min-h-[40px]', tab === k ? 'bg-fill text-onfill border border-fillstrong' : 'btn-ghost')}>{l}</button>
         ))}
       </div>
       {tab === 'mine' && (!results.length ? <Empty title="No recommendations yet">Complete an assessment to receive personalised recommendations.</Empty> :

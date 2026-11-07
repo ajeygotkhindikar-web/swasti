@@ -16,8 +16,8 @@ export function QuestionBlock({ p, a, onChange, index }: { p: Param; a?: AnswerS
           return (
             <button type="button" key={o.value} aria-pressed={sel} onClick={() => onChange({ value: o.value, status: 'answered' })}
               className={clsx('flex min-h-[48px] items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm transition sm:flex-col sm:justify-center sm:text-center',
-                sel ? 'border-teal bg-teal text-onteal' : 'border-line bg-surface hover:border-teal')}>
-              {p.options.length > 2 && <span className={clsx('grid h-6 w-6 shrink-0 place-items-center rounded-full text-xs font-bold', sel ? 'bg-white/20' : 'bg-surface2')}>{o.value}</span>}
+                sel ? 'border-fillstrong bg-fill text-onfill font-semibold' : 'border-line bg-surface hover:border-fillstrong hover:bg-fillsoft')}>
+              {p.options.length > 2 && <span className={clsx('grid h-6 w-6 shrink-0 place-items-center rounded-full text-xs font-bold', sel ? 'bg-fillstrong' : 'bg-surface2')}>{o.value}</span>}
               <span>{o.label}</span>
             </button>
           )

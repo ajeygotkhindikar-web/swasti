@@ -48,8 +48,8 @@ export default function Privacy() {
             return (
               <li key={k} className="flex items-start gap-4 py-3">
                 <div className="flex-1"><div className="text-sm font-semibold">{t}</div><div className="text-xs text-muted">{d}</div>{consents.current[k]?.timestamp && <div className="text-[11px] text-muted">v{consents.current[k].version} · {consents.current[k].timestamp.slice(0, 10)}</div>}</div>
-                <button role="switch" aria-checked={on} aria-label={t} onClick={() => setConsent(k, !on)} className={`relative h-7 w-12 shrink-0 rounded-full transition ${on ? 'bg-teal' : 'bg-line'}`}>
-                  <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition ${on ? 'left-6' : 'left-1'}`} />
+                <button role="switch" aria-checked={on} aria-label={t} onClick={() => setConsent(k, !on)} className={`relative h-7 w-12 shrink-0 rounded-full transition ${on ? 'bg-fillstrong' : 'bg-line'}`}>
+                  <span className={`absolute top-1 h-5 w-5 rounded-full bg-surface shadow transition ${on ? 'left-6' : 'left-1'}`} />
                 </button>
               </li>
             )

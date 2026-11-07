@@ -86,7 +86,7 @@ export default function Assessment() {
           {cats.map((c, i) => {
             const n = c.parameters.filter((p) => answers[p.parameter_id]).length
             return <button key={c.category_id} onClick={() => setStep(i)} title={c.category_name}
-              className={clsx('h-2 flex-1 rounded-full', i === step ? 'bg-saffron' : n === c.parameters.length ? 'bg-teal' : n ? 'bg-teal/40' : 'bg-surface2')} />
+              className={clsx('h-2 flex-1 rounded-full', i === step ? 'bg-teal' : n === c.parameters.length ? 'bg-fillstrong' : n ? 'bg-fill' : 'bg-surface2')} />
           })}
         </div>
       </div>

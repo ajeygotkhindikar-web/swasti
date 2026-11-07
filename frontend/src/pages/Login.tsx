@@ -11,16 +11,16 @@ const DEMO = [
 export function AuthShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
-      <div className="relative hidden overflow-hidden bg-teal p-12 text-white lg:flex lg:flex-col lg:justify-between">
-        <div className="flex items-center gap-3"><div className="rounded-full bg-[#FBF8F1] p-1"><Emblem size={44} /></div><span className="font-display text-xl tracking-[0.2em]">SWASTI</span></div>
+      <div className="relative hidden overflow-hidden bg-fillsoft p-12 text-ink lg:flex lg:flex-col lg:justify-between" style={{ backgroundImage: 'radial-gradient(circle at 85% 90%, rgb(var(--fill)) 0, transparent 55%)' }}>
+        <div className="flex items-center gap-3"><div className="rounded-full bg-surface p-1 shadow-card"><Emblem size={44} /></div><span className="font-display text-xl tracking-[0.2em] text-teal">SWASTI</span></div>
         <div>
-          <h1 className="font-display text-5xl leading-tight">Balance Within.<br />Harmony Around.<br /><span className="text-[#F5B76B]">Well-being for All.</span></h1>
-          <p className="mt-6 max-w-md text-white/80">A 360° view across fourteen dimensions of life — mind, body, money, family, community, culture and more — with small, evidence-informed steps to keep them in balance.</p>
+          <h1 className="font-display text-5xl leading-tight">Balance Within.<br />Harmony Around.<br /><span className="text-saffron">Well-being for All.</span></h1>
+          <p className="mt-6 max-w-md text-muted">A 360° view across fourteen dimensions of life — mind, body, money, family, community, culture and more — with small, evidence-informed steps to keep them in balance.</p>
         </div>
-        <p className="text-xs text-white/60">Balanced professionals · Healthy families · Compassionate communities · A sustainable society</p>
-        <svg className="pointer-events-none absolute -right-40 -bottom-40 opacity-10" width="560" height="560" viewBox="0 0 100 100" aria-hidden>
-          {Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return <circle key={i} cx={50 + 40 * Math.cos(a)} cy={50 + 40 * Math.sin(a)} r="3" fill="white" /> })}
-          <circle cx="50" cy="50" r="46" stroke="white" fill="none" />
+        <p className="text-xs text-muted">Balanced professionals · Healthy families · Compassionate communities · A sustainable society</p>
+        <svg className="pointer-events-none absolute -right-40 -bottom-40 opacity-70" width="560" height="560" viewBox="0 0 100 100" aria-hidden>
+          {Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return <circle key={i} cx={50 + 40 * Math.cos(a)} cy={50 + 40 * Math.sin(a)} r="3" fill="rgb(var(--fill-strong))" /> })}
+          <circle cx="50" cy="50" r="46" stroke="rgb(var(--fill-strong))" fill="none" />
         </svg>
       </div>
       <div className="flex items-center justify-center p-6">{children}</div>

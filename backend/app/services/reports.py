@@ -18,10 +18,14 @@ from sqlalchemy.orm import Session
 from ..models import InterviewRecord, ProfessionalObservation, User, UserWellnessPlan, WellnessRecommendation
 from .dashboard import build_dashboard
 
-TEAL = colors.HexColor("#0F5E63")
-SAFFRON = colors.HexColor("#E8892B")
+TEAL = colors.HexColor("#8C460A")          # deep saffron-brown accent text
+FILL = colors.HexColor("#FDE6C4")          # very light saffron fill
+ON_FILL = colors.HexColor("#5C2D06")       # brown text on saffron fill
+INK = colors.HexColor("#3D2B1F")
+SAFFRON = colors.HexColor("#EB6834")
+CURRENT = colors.HexColor("#2A78D6")
 GREEN = colors.HexColor("#4C9A2A")
-IVORY = colors.HexColor("#FBF8F1")
+IVORY = colors.HexColor("#FFF6EA")
 LEVEL_COLORS = {
     "Needs Attention": colors.HexColor("#C0392B"), "Developing": colors.HexColor("#B9770E"),
     "Balanced": colors.HexColor("#2E6DB4"), "Good": colors.HexColor("#2E8B57"),
@@ -43,8 +47,8 @@ def _radar(data: dict) -> Drawing:
     if any(r["previous"] is not None for r in data["radar"]):
         series.insert(1, [r["previous"] or 0 for r in data["radar"]])
     sc.data = series
-    sc.strands[0].strokeColor = TEAL
-    sc.strands[0].fillColor = colors.Color(0.06, 0.37, 0.39, alpha=0.25)
+    sc.strands[0].strokeColor = CURRENT
+    sc.strands[0].fillColor = colors.Color(0.165, 0.47, 0.84, alpha=0.18)
     sc.strands[0].strokeWidth = 1.5
     last = len(series) - 1
     sc.strands[last].strokeColor = SAFFRON
@@ -57,7 +61,7 @@ def _radar(data: dict) -> Drawing:
     sc.spokeLabels.fontSize = 7
     sc.spokeLabels.fontName = "Helvetica"
     d.add(sc)
-    legend = [("Current", TEAL)] + ([("Previous", colors.HexColor("#8395A7"))] if len(series) == 3 else []) + [("Target", SAFFRON)]
+    legend = [("Current", CURRENT)] + ([("Previous", colors.HexColor("#8395A7"))] if len(series) == 3 else []) + [("Target", SAFFRON)]
     for i, (label, col) in enumerate(legend):
         d.add(Circle(140 * mm, (100 - i * 6) * mm, 1.5 * mm, fillColor=col, strokeColor=col))
         d.add(String(143 * mm, (99 - i * 6) * mm, label, fontSize=8))
@@ -72,7 +76,7 @@ def build_pdf(db: Session, subject: User, kind: str = "individual", viewer: User
     ss = getSampleStyleSheet()
     h1 = ParagraphStyle("h1", parent=ss["Title"], textColor=TEAL, fontSize=20, spaceAfter=2)
     h2 = ParagraphStyle("h2", parent=ss["Heading2"], textColor=TEAL, spaceBefore=10)
-    body = ParagraphStyle("b", parent=ss["BodyText"], fontSize=9.5, leading=13)
+    body = ParagraphStyle("b", parent=ss["BodyText"], fontSize=9.5, leading=13, textColor=INK)
     small = ParagraphStyle("s", parent=body, fontSize=8, textColor=colors.HexColor("#555555"))
     el = []
     el.append(Paragraph("SWASTI", h1))
@@ -95,7 +99,7 @@ def build_pdf(db: Session, subject: User, kind: str = "individual", viewer: User
     ], colWidths=[40 * mm, 45 * mm, 40 * mm, 45 * mm])
     t.setStyle(TableStyle([("FONTSIZE", (0, 0), (-1, -1), 9), ("BACKGROUND", (0, 0), (-1, -1), IVORY),
                            ("TEXTCOLOR", (0, 0), (0, -1), TEAL), ("TEXTCOLOR", (2, 0), (2, -1), TEAL),
-                           ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD"))]))
+                           ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#F1E2CE"))]))
     el.append(t)
     if data["attention_flags"]:
         el.append(Spacer(1, 4))
@@ -112,8 +116,8 @@ def build_pdf(db: Session, subject: User, kind: str = "individual", viewer: User
         rows.append([c["category_name"], _fmt(c["baseline"]), _fmt(c["previous"]), _fmt(c["current"]), c["level"] or "—",
                      _fmt(c["achievable_target"] or c["target"]), "—" if ch is None else f"{ch:+.0f}"])
     t = Table(rows, colWidths=[46 * mm, 18 * mm, 18 * mm, 18 * mm, 30 * mm, 18 * mm, 18 * mm], repeatRows=1)
-    style = [("FONTSIZE", (0, 0), (-1, -1), 8.5), ("BACKGROUND", (0, 0), (-1, 0), TEAL), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-             ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD")), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, IVORY])]
+    style = [("FONTSIZE", (0, 0), (-1, -1), 8.5), ("BACKGROUND", (0, 0), (-1, 0), FILL), ("TEXTCOLOR", (0, 0), (-1, 0), ON_FILL), ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+             ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#F1E2CE")), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, IVORY])]
     for i, c in enumerate(data["cards"], start=1):
         if c["level"] in LEVEL_COLORS:
             style.append(("TEXTCOLOR", (4, i), (4, i), LEVEL_COLORS[c["level"]]))

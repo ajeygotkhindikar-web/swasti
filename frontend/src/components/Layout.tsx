@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   Bell, Bot, CalendarCheck, ClipboardList, FileText, House, LayoutDashboard, LifeBuoy, Lightbulb, Lock, LogOut, Menu,
-  Mic, Monitor, Moon, Repeat, Settings, Stethoscope, Sun, User as UserIcon, X,
+  Mic, Moon, Repeat, Settings, Stethoscope, Sun, User as UserIcon, X,
 } from 'lucide-react'
 import clsx from 'clsx'
 import { Logo } from './Logo'
@@ -37,12 +37,12 @@ const MOBILE: Record<Role, string[]> = {
 
 function ThemeSwitch() {
   const [theme, setTheme] = useTheme()
-  const opts = [['light', Sun], ['system', Monitor], ['dark', Moon]] as const
+  const opts = [['light', Sun], ['dark', Moon]] as const
   return (
     <div className="flex rounded-xl border border-line p-0.5" role="radiogroup" aria-label="Theme">
       {opts.map(([v, I]) => (
         <button key={v} role="radio" aria-checked={theme === v} aria-label={`${v} theme`} onClick={() => setTheme(v)}
-          className={clsx('grid h-8 w-8 place-items-center rounded-lg', theme === v ? 'bg-teal-soft text-teal' : 'text-muted')}>
+          className={clsx('grid h-8 w-8 place-items-center rounded-lg', theme === v ? 'bg-fill text-onfill' : 'text-muted')}>
           <I size={15} />
         </button>
       ))}
@@ -60,7 +60,7 @@ function Notifications() {
     <div className="relative">
       <button className="relative grid h-10 w-10 place-items-center rounded-xl hover:bg-surface2" aria-label={`Notifications, ${unread} unread`} onClick={() => setOpen(!open)}>
         <Bell size={18} />
-        {unread > 0 && <span className="absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-saffron px-1 text-[10px] font-bold text-white">{unread}</span>}
+        {unread > 0 && <span className="absolute right-1.5 top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-fillstrong px-1 text-[10px] font-bold text-onfill">{unread}</span>}
       </button>
       {open && (
         <div className="card absolute right-0 z-40 mt-2 w-[min(22rem,calc(100vw-2rem))] p-2">
@@ -90,7 +90,7 @@ export function Layout({ children }: { children?: ReactNode }) {
     <nav className="space-y-0.5" aria-label="Main">
       {items.map(({ to, label, icon: I }) => (
         <NavLink key={to} to={to} end={to === '/'}
-          className={({ isActive }) => clsx('flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium', isActive ? 'bg-teal text-onteal' : 'text-ink/80 hover:bg-surface2')}>
+          className={({ isActive }) => clsx('flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium', isActive ? 'bg-fill text-onfill font-semibold' : 'text-ink/80 hover:bg-fillsoft')}>
           <I size={17} aria-hidden /> {label}
         </NavLink>
       ))}

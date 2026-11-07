@@ -28,7 +28,7 @@ export default function Reviews() {
       {!data?.length ? <Empty title="No reviews yet">Complete an assessment, then create your first review.</Empty> : (
         <>
           <div className="mb-4 flex flex-wrap gap-2">
-            {data.map((x, i) => <button key={x.review_id} onClick={() => setSel(i)} className={`btn min-h-[40px] ${i === sel ? 'bg-teal text-onteal' : 'btn-ghost'}`}>{x.year} Q{x.quarter}</button>)}
+            {data.map((x, i) => <button key={x.review_id} onClick={() => setSel(i)} className={`btn min-h-[40px] ${i === sel ? 'bg-fill text-onfill border border-fillstrong' : 'btn-ghost'}`}>{x.year} Q{x.quarter}</button>)}
           </div>
           {r && (
             <div className="space-y-4">

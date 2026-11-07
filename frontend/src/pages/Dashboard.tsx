@@ -41,7 +41,7 @@ export default function Dashboard() {
       {/* A. Overview */}
       <section className="grid grid-cols-2 gap-3 lg:grid-cols-6" aria-label="Overview">
         <div className="card col-span-2 flex items-center gap-4 p-4">
-          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-full border-[6px]" style={{ borderColor: 'rgb(var(--teal))' }}>
+          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-full border-[6px]" style={{ borderColor: 'rgb(var(--fill-strong))' }}>
             <span className="font-display text-2xl font-semibold">{o.overall_indicator !== null ? fmt(o.overall_indicator) : '—'}</span>
           </div>
           <div>

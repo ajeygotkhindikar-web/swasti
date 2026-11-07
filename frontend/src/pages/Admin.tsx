@@ -208,7 +208,7 @@ export default function Admin() {
     <div>
       <PageHeader title="Administration" subtitle="Configure dimensions, scoring, evidence and agents; manage users; view anonymised analytics. Individual wellness data is never visible here." />
       <div className="mb-5 flex gap-2 overflow-x-auto pb-1" role="tablist">
-        {TABS.map((t) => <button key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)} className={clsx('btn min-h-[40px] shrink-0', tab === t ? 'bg-teal text-onteal' : 'btn-ghost')}>{t}</button>)}
+        {TABS.map((t) => <button key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)} className={clsx('btn min-h-[40px] shrink-0', tab === t ? 'bg-fill text-onfill border border-fillstrong' : 'btn-ghost')}>{t}</button>)}
       </div>
       <Body />
     </div>

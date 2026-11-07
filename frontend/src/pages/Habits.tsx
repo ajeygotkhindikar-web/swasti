@@ -43,7 +43,7 @@ export default function Habits() {
             <div key={h.habit_id} className={clsx('card p-4', h.status === 'paused' && 'opacity-60')}>
               <div className="flex items-start gap-3">
                 <button onClick={() => toggle(h)} disabled={h.status !== 'active'} aria-pressed={h.done_today} aria-label={h.done_today ? `Undo ${h.habit_name} today` : `Mark ${h.habit_name} done today`}
-                  className={clsx('grid h-12 w-12 shrink-0 place-items-center rounded-2xl border-2 transition', h.done_today ? 'border-leaf bg-leaf text-white' : 'border-line hover:border-leaf')}>
+                  className={clsx('grid h-12 w-12 shrink-0 place-items-center rounded-2xl border-2 transition', h.done_today ? 'border-fillstrong bg-fill text-onfill' : 'border-line hover:border-fillstrong')}>
                   <Check size={22} />
                 </button>
                 <div className="min-w-0 flex-1">
@@ -54,7 +54,7 @@ export default function Habits() {
                 </div>
               </div>
               <div className="mt-3 flex gap-[3px]" aria-label="Last 28 days">
-                {h.last_28_days.map((d: boolean, i: number) => <span key={i} className={clsx('h-5 flex-1 rounded-[4px]', d ? 'bg-leaf' : 'bg-surface2')} title={d ? 'done' : ''} />)}
+                {h.last_28_days.map((d: boolean, i: number) => <span key={i} className={clsx('h-5 flex-1 rounded-[4px]', d ? 'bg-fillstrong' : 'bg-surface2')} title={d ? 'done' : ''} />)}
               </div>
               <div className="mt-1 flex justify-between text-[10px] text-muted"><span>4 weeks ago</span><span>today</span></div>
               <div className="mt-3 flex flex-wrap items-center gap-2">
