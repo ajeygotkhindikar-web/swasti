@@ -6,7 +6,8 @@ import App from './App'
 import { AuthProvider } from './lib/auth'
 
 try {
-  document.documentElement.setAttribute('data-theme', localStorage.getItem('swasti.theme.v2') === 'dark' ? 'dark' : 'light')
+  localStorage.removeItem('swasti.theme'); localStorage.removeItem('swasti.theme.v2') // retired dark-theme preference
+  document.documentElement.setAttribute('data-theme', 'light')
 } catch { /* storage unavailable */ }
 
 createRoot(document.getElementById('root')!).render(

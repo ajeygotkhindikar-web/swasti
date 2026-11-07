@@ -131,7 +131,7 @@ export function OverallTrend({ data }: { data: any[] }) {
 }
 
 export function HabitBars({ data }: { data: any[] }) {
-  const c = useVars(['--s-previous', '--grid', '--muted'])
+  const c = useVars(['--bar', '--grid', '--muted'])
   return (
     <div className="h-56">
       <ResponsiveContainer>
@@ -139,7 +139,7 @@ export function HabitBars({ data }: { data: any[] }) {
           <CartesianGrid stroke={c['--grid']} strokeDasharray="2 4" vertical={false} />
           <XAxis dataKey="label" tick={{ fontSize: 10, fill: rgb(c['--muted']) }} tickLine={false} />
           <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: rgb(c['--muted']) }} tickLine={false} axisLine={false} />
-          <Bar dataKey="completions" name="Completions (week of)" fill={c['--s-previous']} radius={[4, 4, 0, 0]} isAnimationActive={false} />
+          <Bar dataKey="completions" name="Completions (week of)" fill={c['--bar']} radius={[4, 4, 0, 0]} isAnimationActive={false} />
           <Tooltip content={<TipBox />} cursor={{ fill: 'rgba(127,127,127,0.08)' }} />
         </BarChart>
       </ResponsiveContainer>

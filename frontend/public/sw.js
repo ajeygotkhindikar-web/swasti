@@ -1,5 +1,5 @@
 /* SWASTI service worker: offline app shell; API calls are never cached (sensitive data). */
-const CACHE = 'swasti-shell-v2'
+const CACHE = 'swasti-shell-v3'
 const SHELL = ['/', '/index.html', '/favicon.svg', '/manifest.webmanifest', '/icon-192.png']
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL))); self.skipWaiting() })
 self.addEventListener('activate', (e) => {

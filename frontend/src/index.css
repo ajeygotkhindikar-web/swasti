@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* SWASTI brand tokens: deep teal, saffron, leaf green, soft ivory, muted blue */
-/* SWASTI palette: white canvas, very light "spiritual" saffron fills, warm brown text */
+/* SWASTI palette: white canvas, light orange fills, warm brown text. Light only, by design. */
 :root {
   --bg: 255 255 255;          /* white */
   --surface: 255 255 255;
@@ -11,33 +11,24 @@
   --ink: 61 43 31;            /* warm brown-black text, softer than pure black */
   --muted: 120 101 86;
   --line: 241 226 206;
-  --teal: 140 70 10;          /* accent (links, brand, icons): deep saffron-brown, 7:1 on white */
-  --teal-soft: 255 243 226;
-  --saffron: 178 92 14;       /* saffron text accent, 4.6:1 on white */
-  --saffron-soft: 255 239 216;
-  --fill: 253 230 196;        /* very light saffron: buttons, active items */
-  --fill-strong: 247 205 150; /* borders / completed marks */
-  --fill-soft: 255 246 234;   /* large calm areas (login panel) */
-  --on-fill: 92 45 6;         /* deep brown text on saffron fills, ~10:1 */
+  --teal: 160 70 0;           /* accent (links, brand, icons): deep orange-brown, 6:1 on white */
+  --teal-soft: 255 241 228;
+  --saffron: 184 84 0;        /* orange text accent, 4.6:1 on white */
+  --saffron-soft: 255 236 214;
+  --fill: 255 224 189;        /* light orange: buttons, active items */
+  --fill-strong: 250 196 140; /* borders / completed marks */
+  --fill-soft: 255 245 235;   /* large calm areas (login panel) */
+  --on-fill: 102 45 0;        /* dark brown-orange text on light orange, ~9:1 */
   --on-teal: 255 255 255;
   --leaf: 46 112 40;
   --trust: 62 98 146;
   /* chart series (validated categorical slots) */
   --s-current: #2a78d6; --s-target: #eb6834; --s-previous: #1baf7a; --s-baseline: #6250d6;
-  --grid: #eadfcd;
+  --grid: #f0e2d2;
+  --bar: #d9741c;             /* orange marks for single-series charts */
   /* wellness levels: always paired with a text label */
   --lv-attention: #b42318; --lv-developing: #a15c07; --lv-balanced: #2a63b8; --lv-good: #1f7a3a; --lv-thriving: #6b3fa0;
   color-scheme: light;
-}
-/* Optional dark theme: only when the person explicitly chooses it (never automatic). */
-:root[data-theme="dark"] {
-  --bg: 28 22 18; --surface: 38 30 25; --surface2: 48 38 31; --ink: 245 236 224; --muted: 190 172 152; --line: 66 53 43;
-  --teal: 245 178 108; --teal-soft: 64 44 24; --saffron: 245 170 90; --saffron-soft: 70 46 20;
-  --fill: 92 58 22; --fill-strong: 130 84 34; --fill-soft: 46 34 24; --on-fill: 255 236 210; --on-teal: 28 22 18;
-  --leaf: 130 196 100; --trust: 132 168 220;
-  --s-current: #3987e5; --s-target: #d95926; --s-previous: #199e70; --s-baseline: #9085e9; --grid: #4a3b30;
-  --lv-attention: #f07167; --lv-developing: #f2b04c; --lv-balanced: #7fb0f0; --lv-good: #6fcf8b; --lv-thriving: #c39cf0;
-  color-scheme: dark;
 }
 
 html, body, #root { min-height: 100%; }

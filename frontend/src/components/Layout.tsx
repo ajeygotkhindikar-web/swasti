@@ -2,13 +2,12 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   Bell, Bot, CalendarCheck, ClipboardList, FileText, House, LayoutDashboard, LifeBuoy, Lightbulb, Lock, LogOut, Menu,
-  Mic, Moon, Repeat, Settings, Stethoscope, Sun, User as UserIcon, X,
+  Mic, Repeat, Settings, Stethoscope, User as UserIcon, X,
 } from 'lucide-react'
 import clsx from 'clsx'
 import { Logo } from './Logo'
 import { useAuth, type Role } from '../lib/auth'
 import { api } from '../lib/api'
-import { useTheme } from '../lib/hooks'
 
 interface Item { to: string; label: string; icon: typeof House; roles: Role[] }
 const ALL: Role[] = ['individual', 'coach', 'counselor', 'admin']
@@ -33,21 +32,6 @@ const MOBILE: Record<Role, string[]> = {
   coach: ['/', '/coach', '/interview', '/reports'],
   counselor: ['/', '/coach', '/interview', '/reports'],
   admin: ['/', '/admin', '/agents', '/help'],
-}
-
-function ThemeSwitch() {
-  const [theme, setTheme] = useTheme()
-  const opts = [['light', Sun], ['dark', Moon]] as const
-  return (
-    <div className="flex rounded-xl border border-line p-0.5" role="radiogroup" aria-label="Theme">
-      {opts.map(([v, I]) => (
-        <button key={v} role="radio" aria-checked={theme === v} aria-label={`${v} theme`} onClick={() => setTheme(v)}
-          className={clsx('grid h-8 w-8 place-items-center rounded-lg', theme === v ? 'bg-fill text-onfill' : 'text-muted')}>
-          <I size={15} />
-        </button>
-      ))}
-    </div>
-  )
 }
 
 function Notifications() {
@@ -102,7 +86,6 @@ export function Layout({ children }: { children?: ReactNode }) {
         <Logo />
         {SideNav}
         <div className="mt-auto space-y-3">
-          <ThemeSwitch />
           <p className="text-[11px] italic text-muted">Balance Within. Harmony Around. Well-being for All.</p>
           <p className="text-[10px] text-muted/80" title="Build time">Build {__BUILD_TIME__}</p>
         </div>
@@ -113,7 +96,6 @@ export function Layout({ children }: { children?: ReactNode }) {
           <div className="h-full w-72 max-w-[85vw] overflow-y-auto bg-surface p-5" onClick={(e) => e.stopPropagation()}>
             <div className="mb-6 flex items-center justify-between"><Logo compact /><button aria-label="Close menu" onClick={() => setDrawer(false)}><X /></button></div>
             {SideNav}
-            <div className="mt-6"><ThemeSwitch /></div>
           </div>
         </div>
       )}

@@ -8,9 +8,9 @@ export function Emblem({ size = 40, mono = false }: { size?: number; mono?: bool
     const a = (i / 14) * Math.PI * 2 - Math.PI / 2
     return [50 + 41 * Math.cos(a), 50 + 41 * Math.sin(a)]
   })
-  const teal = mono ? 'currentColor' : '#0F5E63'
-  const leaf = mono ? 'currentColor' : '#3D7D28'
-  const saffron = mono ? 'currentColor' : '#E8892B'
+  const teal = mono ? 'currentColor' : '#B4530A'
+  const leaf = mono ? 'currentColor' : '#F0A04B'
+  const saffron = mono ? 'currentColor' : '#E07A1F'
   const petal = 'M50 70 C41 60 41 46 50 34 C59 46 59 60 50 70 Z'
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" role="img" aria-label="SWASTI emblem">
@@ -27,7 +27,7 @@ export function Emblem({ size = 40, mono = false }: { size?: number; mono?: bool
         <path d={petal} fill={teal} />
       </g>
       <path d="M36 70 Q50 81 64 70 Z" fill={saffron} />
-      <path d="M50 41 C54.5 47 54.5 53 50 56 C45.5 53 45.5 47 50 41 Z" fill={mono ? 'none' : '#FBE3B8'} stroke={saffron} strokeWidth="1.6" />
+      <path d="M50 41 C54.5 47 54.5 53 50 56 C45.5 53 45.5 47 50 41 Z" fill={mono ? 'none' : '#FFE7C2'} stroke={saffron} strokeWidth="1.6" />
       <circle cx="50" cy="51" r="1.8" fill={saffron} />
     </svg>
   )
