@@ -104,6 +104,7 @@ export function Layout({ children }: { children?: ReactNode }) {
         <div className="mt-auto space-y-3">
           <ThemeSwitch />
           <p className="text-[11px] italic text-muted">Balance Within. Harmony Around. Well-being for All.</p>
+          <p className="text-[10px] text-muted/80" title="Build time">Build {__BUILD_TIME__}</p>
         </div>
       </aside>
 
